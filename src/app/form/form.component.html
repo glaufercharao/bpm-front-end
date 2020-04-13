@@ -1,0 +1,67 @@
+<form  [formGroup]="form" (ngSubmit)="save()">
+  <div class="col-md-12">
+      <h4>{{titulo}}</h4>
+      <div><hr class="my-4"></div>
+      <div class="ui-grid-row">
+        <div *ngIf="showComponent" class="ui-grid-col-3">
+          <app-list-select (selected)="productSelected($event)"></app-list-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <div>
+            <span class="ui-float-label">
+              <input id="name" class="form-control form-control-md" type="text" name="name"
+                      formControlName="name" pInputText required [readonly]="disableField">
+              <label for="name">Nome</label>
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <div>
+           <span class="ui-float-label">
+              <input id="quantity" class="form-control form-control-md" type="text" name="quantity"
+                     formControlName="quantity" pInputText pKeyFilter="num" required [readonly]="disableField">
+              <label for="quantity">Quantidade</label>
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-3">
+          <div class="ui-inputgroup">
+            <span class="ui-float-label">
+              <input id="preco" type="text" currencyMask [options]="{prefix: '', thousands:'.', decimal:',',allowNegative:false}"
+                     value="0.00" class="form-control" name="price" formControlName="price" pInputText required
+                     [readonly]="disableField">
+              <label for="preco">Preço</label>
+            </span>
+            <span class="ui-inputgroup-addon">R$</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12" style="margin-top: 15px">
+          <span class="ui-float-label">
+            <textarea class="form-control-lg col-md-11" id="description" name="description" pInputTextarea
+                      formControlName="description" required [readonly]="disableField">
+            </textarea>
+            <label for="description">Descrição</label>
+          </span>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div *ngIf="showComponent" class="ui-grid-col-12">
+          <app-analyze (selectedItem)="analyzeSelected($event)" (inputEmitter)="inputTextEmitter($event)"></app-analyze>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-11">
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary" [disabled]="disabelButton">
+              Enviar {{btnEnviar}}
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+</form>
+

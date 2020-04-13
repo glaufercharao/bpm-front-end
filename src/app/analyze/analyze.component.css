@@ -1,0 +1,18 @@
+.decoration{
+  padding: 15px auto;
+}
+.ui-grid-col-3{
+  padding-right: 5px;
+  width: max-content;
+
+}
+.ui-grid-col-9{
+  padding-right: 5px;
+  padding-bottom: 30px;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}

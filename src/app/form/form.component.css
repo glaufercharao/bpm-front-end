@@ -1,0 +1,27 @@
+.input-group-text {
+  background: #D3D3D3;
+  border:solid 1px #BEBEBE;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+textarea.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+.ui-inputgroup-addon{
+  height: 35px;
+  width: 50px;
+  text-align: center;
+}
+textarea{
+  height: 100px;
+}

@@ -1,0 +1,15 @@
+.tdAlign {
+  text-align: end;
+}
+.table{
+  background: #f8f9fa ;
+  color: #4289d6;
+  border: solid 3px white;
+}
+.badge {
+  color: white;
+  width: 90px;
+}
+.thHeader{
+  width: 120px;
+}

@@ -1,0 +1,15 @@
+<ul class="nav justify-content-start">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/login">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/solicitation">Requisitar Material</a>
+  </li>
+  <li *ngIf="mostrarMenu" class="nav-item">
+    <a class="nav-link" routerLink="/analyze">Analise de Requisição</a>
+  </li>
+  <li *ngIf="mostrarMenu" class="nav-item">
+    <a class="nav-link" routerLink="/all-solicitation">Pesquisa de Requisição</a>
+  </li>
+</ul>
+

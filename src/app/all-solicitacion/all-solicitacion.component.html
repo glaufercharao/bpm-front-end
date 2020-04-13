@@ -1,0 +1,30 @@
+<h4>Lista de materiais solicitados</h4>
+<div><hr class="my-4"></div>
+<p-table #dt [columns]="cols" [value]="products" [paginator]="true" [rows]="10" [responsive]="true">
+  <ng-template pTemplate="caption">
+    <div style="text-align: right">
+      <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+      <input type="text" pInputText size="50" placeholder="Filtrar..." (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nome do solicitante</th>
+      <th class="thHeader">Quantidade</th>
+      <th class="thHeader">Preço</th>
+      <th>Descrição</th>
+      <th class="thHeader" style="text-align: center">Status</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData let-product>
+    <tr>
+      <td>{{product.name}}</td>
+      <td class="tdAlign">{{product.quantity}}</td>
+      <td class="tdAlign">R${{product.price}}</td>
+      <td>{{product.description}}</td>
+      <td><span class="badge badge-{{statusColors(product.status)}}">{{product.status}}</span></td>
+    </tr>
+  </ng-template>
+</p-table>
